@@ -1,0 +1,291 @@
+2022.06.16 20:03:15 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2022.06.16 20:03:17 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 9.5.0.56709 / 3185a5669fdfaf7e4fa6dc7876e0b0dfd5d2aae7
+2022.06.16 20:03:17 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:postgresql://sonarqube.c96bilkh14mm.us-east-1.rds.amazonaws.com/sonar:5432
+2022.06.16 20:03:19 WARN  web[][o.s.c.a.AnnotationConfigApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc-org.sonar.db.DefaultDatabase': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Fail to connect to database
+2022.06.16 20:03:19 ERROR web[][o.s.s.p.PlatformImpl] Web server startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc-org.sonar.db.DefaultDatabase': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Fail to connect to database
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:187)
+	at org.sonar.server.platform.platformlevel.PlatformLevel.start(PlatformLevel.java:80)
+	at org.sonar.server.platform.platformlevel.PlatformLevel1.start(PlatformLevel1.java:164)
+	at org.sonar.server.platform.PlatformImpl.start(PlatformImpl.java:196)
+	at org.sonar.server.platform.PlatformImpl.startLevel1Container(PlatformImpl.java:162)
+	at org.sonar.server.platform.PlatformImpl.init(PlatformImpl.java:76)
+	at org.sonar.server.platform.web.PlatformServletContextListener.contextInitialized(PlatformServletContextListener.java:43)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4768)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5230)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.sonar.server.app.EmbeddedTomcat.start(EmbeddedTomcat.java:72)
+	at org.sonar.server.app.WebServer.start(WebServer.java:55)
+	at org.sonar.process.ProcessEntryPoint.launch(ProcessEntryPoint.java:97)
+	at org.sonar.process.ProcessEntryPoint.launch(ProcessEntryPoint.java:81)
+	at org.sonar.server.app.WebServer.main(WebServer.java:104)
+Caused by: java.lang.IllegalStateException: Fail to connect to database
+	at org.sonar.db.DefaultDatabase.start(DefaultDatabase.java:86)
+	at org.sonar.core.platform.StartableBeanPostProcessor.postProcessBeforeInitialization(StartableBeanPostProcessor.java:33)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalStateException: Can not connect to database. Please check connectivity and settings (see the properties prefixed by 'sonar.jdbc.').
+	at org.sonar.db.DefaultDatabase.checkConnection(DefaultDatabase.java:118)
+	at org.sonar.db.DefaultDatabase.start(DefaultDatabase.java:83)
+	... 48 common frames omitted
+Caused by: java.sql.SQLException: Cannot create PoolableConnectionFactory (FATAL: password authentication failed for user "postgresql")
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:653)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:531)
+	at org.apache.commons.dbcp2.BasicDataSource.lambda$getConnection$0(BasicDataSource.java:720)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:722)
+	at org.sonar.db.profiling.NullConnectionInterceptor.getConnection(NullConnectionInterceptor.java:31)
+	at org.sonar.db.profiling.ProfiledDataSource.getConnection(ProfiledDataSource.java:317)
+	at org.sonar.db.DefaultDatabase.checkConnection(DefaultDatabase.java:115)
+	... 49 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgresql"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:646)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:400)
+	at org.postgresql.Driver.connect(Driver.java:259)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:52)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:374)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:106)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:649)
+	... 56 common frames omitted
+2022.06.16 20:03:19 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2022.06.16 20:03:19 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2022.06.16 20:05:03 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2022.06.16 20:05:05 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 9.5.0.56709 / 3185a5669fdfaf7e4fa6dc7876e0b0dfd5d2aae7
+2022.06.16 20:05:05 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:postgresql://sonarqube.c96bilkh14mm.us-east-1.rds.amazonaws.com/sonar:5432
+2022.06.16 20:05:06 WARN  web[][o.s.c.a.AnnotationConfigApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc-org.sonar.db.DefaultDatabase': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Fail to connect to database
+2022.06.16 20:05:06 ERROR web[][o.s.s.p.PlatformImpl] Web server startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc-org.sonar.db.DefaultDatabase': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Fail to connect to database
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:187)
+	at org.sonar.server.platform.platformlevel.PlatformLevel.start(PlatformLevel.java:80)
+	at org.sonar.server.platform.platformlevel.PlatformLevel1.start(PlatformLevel1.java:164)
+	at org.sonar.server.platform.PlatformImpl.start(PlatformImpl.java:196)
+	at org.sonar.server.platform.PlatformImpl.startLevel1Container(PlatformImpl.java:162)
+	at org.sonar.server.platform.PlatformImpl.init(PlatformImpl.java:76)
+	at org.sonar.server.platform.web.PlatformServletContextListener.contextInitialized(PlatformServletContextListener.java:43)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4768)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5230)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.sonar.server.app.EmbeddedTomcat.start(EmbeddedTomcat.java:72)
+	at org.sonar.server.app.WebServer.start(WebServer.java:55)
+	at org.sonar.process.ProcessEntryPoint.launch(ProcessEntryPoint.java:97)
+	at org.sonar.process.ProcessEntryPoint.launch(ProcessEntryPoint.java:81)
+	at org.sonar.server.app.WebServer.main(WebServer.java:104)
+Caused by: java.lang.IllegalStateException: Fail to connect to database
+	at org.sonar.db.DefaultDatabase.start(DefaultDatabase.java:86)
+	at org.sonar.core.platform.StartableBeanPostProcessor.postProcessBeforeInitialization(StartableBeanPostProcessor.java:33)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalStateException: Can not connect to database. Please check connectivity and settings (see the properties prefixed by 'sonar.jdbc.').
+	at org.sonar.db.DefaultDatabase.checkConnection(DefaultDatabase.java:118)
+	at org.sonar.db.DefaultDatabase.start(DefaultDatabase.java:83)
+	... 48 common frames omitted
+Caused by: java.sql.SQLException: Cannot create PoolableConnectionFactory (FATAL: database "sonar:5432" does not exist)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:653)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:531)
+	at org.apache.commons.dbcp2.BasicDataSource.lambda$getConnection$0(BasicDataSource.java:720)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:722)
+	at org.sonar.db.profiling.NullConnectionInterceptor.getConnection(NullConnectionInterceptor.java:31)
+	at org.sonar.db.profiling.ProfiledDataSource.getConnection(ProfiledDataSource.java:317)
+	at org.sonar.db.DefaultDatabase.checkConnection(DefaultDatabase.java:115)
+	... 49 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: database "sonar:5432" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2787)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:173)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:290)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:400)
+	at org.postgresql.Driver.connect(Driver.java:259)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:52)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:374)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:106)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:649)
+	... 56 common frames omitted
+2022.06.16 20:05:07 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2022.06.16 20:05:07 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2022.06.16 20:05:59 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2022.06.16 20:06:02 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 9.5.0.56709 / 3185a5669fdfaf7e4fa6dc7876e0b0dfd5d2aae7
+2022.06.16 20:06:02 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:postgresql://sonarqube.c96bilkh14mm.us-east-1.rds.amazonaws.com
+2022.06.16 20:06:02 WARN  web[][o.postgresql.Driver] JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://sonarqube.c96bilkh14mm.us-east-1.rds.amazonaws.com
+2022.06.16 20:06:02 WARN  web[][o.s.c.a.AnnotationConfigApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdk.internal.loader.ClassLoaders$AppClassLoader@5c29bfd-org.sonar.db.DefaultDatabase': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Fail to connect to database
+2022.06.16 20:06:02 ERROR web[][o.s.s.p.PlatformImpl] Web server startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdk.internal.loader.ClassLoaders$AppClassLoader@5c29bfd-org.sonar.db.DefaultDatabase': Initialization of bean failed; nested exception is java.lang.IllegalStateException: Fail to connect to database
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:187)
+	at org.sonar.server.platform.platformlevel.PlatformLevel.start(PlatformLevel.java:80)
+	at org.sonar.server.platform.platformlevel.PlatformLevel1.start(PlatformLevel1.java:164)
+	at org.sonar.server.platform.PlatformImpl.start(PlatformImpl.java:196)
+	at org.sonar.server.platform.PlatformImpl.startLevel1Container(PlatformImpl.java:162)
+	at org.sonar.server.platform.PlatformImpl.init(PlatformImpl.java:76)
+	at org.sonar.server.platform.web.PlatformServletContextListener.contextInitialized(PlatformServletContextListener.java:43)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4768)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5230)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.sonar.server.app.EmbeddedTomcat.start(EmbeddedTomcat.java:72)
+	at org.sonar.server.app.WebServer.start(WebServer.java:55)
+	at org.sonar.process.ProcessEntryPoint.launch(ProcessEntryPoint.java:97)
+	at org.sonar.process.ProcessEntryPoint.launch(ProcessEntryPoint.java:81)
+	at org.sonar.server.app.WebServer.main(WebServer.java:104)
+Caused by: java.lang.IllegalStateException: Fail to connect to database
+	at org.sonar.db.DefaultDatabase.start(DefaultDatabase.java:86)
+	at org.sonar.core.platform.StartableBeanPostProcessor.postProcessBeforeInitialization(StartableBeanPostProcessor.java:33)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalStateException: Can not connect to database. Please check connectivity and settings (see the properties prefixed by 'sonar.jdbc.').
+	at org.sonar.db.DefaultDatabase.checkConnection(DefaultDatabase.java:118)
+	at org.sonar.db.DefaultDatabase.start(DefaultDatabase.java:83)
+	... 48 common frames omitted
+Caused by: java.sql.SQLException: Cannot create JDBC driver of class 'org.postgresql.Driver' for connect URL 'jdbc:postgresql://sonarqube.c96bilkh14mm.us-east-1.rds.amazonaws.com'
+	at org.apache.commons.dbcp2.DriverFactory.createDriver(DriverFactory.java:75)
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:459)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:525)
+	at org.apache.commons.dbcp2.BasicDataSource.lambda$getConnection$0(BasicDataSource.java:720)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:722)
+	at org.sonar.db.profiling.NullConnectionInterceptor.getConnection(NullConnectionInterceptor.java:31)
+	at org.sonar.db.profiling.ProfiledDataSource.getConnection(ProfiledDataSource.java:317)
+	at org.sonar.db.DefaultDatabase.checkConnection(DefaultDatabase.java:115)
+	... 49 common frames omitted
+Caused by: java.sql.SQLException: No suitable driver
+	at org.apache.commons.dbcp2.DriverFactory.createDriver(DriverFactory.java:68)
+	... 57 common frames omitted
+2022.06.16 20:06:02 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2022.06.16 20:06:02 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2022.06.16 20:10:06 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2022.06.16 20:10:08 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 9.5.0.56709 / 3185a5669fdfaf7e4fa6dc7876e0b0dfd5d2aae7
+2022.06.16 20:10:08 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:postgresql://sonarqube.c96bilkh14mm.us-east-1.rds.amazonaws.com:5432/sonar
+2022.06.16 20:10:15 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2022.06.16 20:10:15 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2022.06.16 20:10:16 INFO  web[][o.s.s.p.d.m.h.MigrationHistoryTableImpl] Creating table schema_migrations
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy C# Code Quality and Security / 8.40.0.48530 / 1032f59c84b83ac511bb0ddce6be4e53590df0f3
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Configuration detection fot Code Quality and Security / 1.2.0.267 / 4f37ba9ffb37a96d5883e52ad392ed32c5c6eaab
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Flex Code Quality and Security / 2.7.0.2865 / 9e61d9774455b25eefd0b71bf8903cb030641864
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Go Code Quality and Security / 1.9.0.3429 / faf3c08c0ebf3a877186442cd4a0ddd50de079a8
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy HTML Code Quality and Security / 3.6.0.3106 / 963bdc9f051f5dcb698b418790364231aeea04f2
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy IaC Code Quality and Security / 1.7.0.2012 / a006dbf717537ce3a87bb2b6b088597ead3273d1
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JaCoCo / 1.1.1.1157 / 83478572b9f23efac29de15e30c7758bbb0c0e47
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Java Code Quality and Security / 7.12.0.29739 / 0d02c81aa01624ff348b01257ecf7288bbbe0a16
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JavaScript/TypeScript/CSS Code Quality and Security / 9.3.0.18033 / 8fd364274dc85afd7e70fe8d86b7427b3f8fe3a9
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Kotlin Code Quality and Security / 2.9.0.1147 / 6ce439214a685d4aabde6461fd609a9a9c1df1c6
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy PHP Code Quality and Security / 3.23.1.8766 / db197ac9daccf3d305ad5e40618a65a95f3d5dde
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Python Code Quality and Security / 3.13.0.9611 / 59566828fb593103a5b39147d918b1314561b0e4
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Ruby Code Quality and Security / 1.9.0.3429 / faf3c08c0ebf3a877186442cd4a0ddd50de079a8
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Scala Code Quality and Security / 1.9.0.3429 / faf3c08c0ebf3a877186442cd4a0ddd50de079a8
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Text file Code Quality and Security / 1.1.0.282 / a90347d77706f598413780a08442deec4ae68f4e
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy VB.NET Code Quality and Security / 8.40.0.48530 / 1032f59c84b83ac511bb0ddce6be4e53590df0f3
+2022.06.16 20:10:20 INFO  web[][o.s.s.p.ServerPluginManager] Deploy XML Code Quality and Security / 2.5.0.3376 / 3b089c16cf0736c56f4fdb2fc88ddad59e7ca45d
+2022.06.16 20:10:22 INFO  web[][o.s.s.p.d.m.c.PostgresCharsetHandler] Verify that database charset supports UTF8
+2022.06.16 20:10:23 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [http://localhost:9001]
+2022.06.16 20:10:24 WARN  web[][o.s.a.s.w.WebService$Action] Description is not set on action api/monitoring/metrics
+2022.06.16 20:10:24 WARN  web[][o.s.a.s.w.WebService$Action] Since is not set on action api/monitoring/metrics
+2022.06.16 20:10:24 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/monitoring/metrics
+2022.06.16 20:10:24 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2022.06.16 20:10:24 INFO  web[][o.s.s.p.d.m.AutoDbMigration] Automatically perform DB migration on fresh install
+2022.06.16 20:10:24 INFO  web[][DbMigrations] Executing DB migrations...
+2022.06.16 20:10:24 INFO  web[][DbMigrations] #1 'Create initial schema'...
+2022.06.16 20:11:24 INFO  web[][DbMigrations] #1 'Create initial schema': success | time=60144ms
+2022.06.16 20:11:24 INFO  web[][DbMigrations] #2 'Populate initial schema'...
+2022.06.16 20:12:22 INFO  web[][DbMigrations] #2 'Populate initial schema': success | time=57588ms
+2022.06.16 20:12:22 INFO  web[][DbMigrations] #5001 'Drop PK on 'uuid' for 'ce_activity' table'...
+2022.06.16 20:15:07 INFO  web[][o.s.p.ProcessEntryPoint] Gracefully stopping process

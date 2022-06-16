@@ -1,0 +1,115 @@
+2022.06.15 00:06:45 INFO  web[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2022.06.15 00:06:46 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2022.06.15 00:06:46 WARN  web[][o.a.c.l.WebappClassLoaderBase] The web application [ROOT] appears to have started a thread named [OkHttp gitlab.com] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n java.base@11.0.14/java.net.SocketInputStream.socketRead0(Native Method)\n java.base@11.0.14/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)\n java.base@11.0.14/java.net.SocketInputStream.read(SocketInputStream.java:168)\n java.base@11.0.14/java.net.SocketInputStream.read(SocketInputStream.java:140)\n java.base@11.0.14/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)\n java.base@11.0.14/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)\n java.base@11.0.14/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)\n java.base@11.0.14/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1449)\n java.base@11.0.14/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1060)\n app//okio.InputStreamSource.read(JvmOkio.kt:90)\n app//okio.AsyncTimeout$source$1.read(AsyncTimeout.kt:129)\n app//okio.RealBufferedSource.request(RealBufferedSource.kt:206)\n app//okio.RealBufferedSource.require(RealBufferedSource.kt:199)\n app//okhttp3.internal.http2.Http2Reader.nextFrame(Http2Reader.kt:89)\n app//okhttp3.internal.http2.Http2Connection$ReaderRunnable.invoke(Http2Connection.kt:618)\n app//okhttp3.internal.http2.Http2Connection$ReaderRunnable.invoke(Http2Connection.kt:609)\n app//okhttp3.internal.concurrent.TaskQueue$execute$1.runOnce(TaskQueue.kt:98)\n app//okhttp3.internal.concurrent.TaskRunner.runTask(TaskRunner.kt:116)\n app//okhttp3.internal.concurrent.TaskRunner.access$runTask(TaskRunner.kt:42)\n app//okhttp3.internal.concurrent.TaskRunner$runnable$1.run(TaskRunner.kt:65)\n java.base@11.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n java.base@11.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n java.base@11.0.14/java.lang.Thread.run(Thread.java:829)
+2022.06.15 00:06:46 WARN  web[][o.a.c.l.WebappClassLoaderBase] The web application [ROOT] appears to have started a thread named [OkHttp TaskRunner] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n java.base@11.0.14/java.lang.Object.wait(Native Method)\n java.base@11.0.14/java.lang.Object.wait(Object.java:462)\n app//okhttp3.internal.concurrent.TaskRunner$RealBackend.coordinatorWait(TaskRunner.kt:294)\n app//okhttp3.internal.concurrent.TaskRunner.awaitTaskToRun(TaskRunner.kt:218)\n app//okhttp3.internal.concurrent.TaskRunner$runnable$1.run(TaskRunner.kt:59)\n java.base@11.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n java.base@11.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n java.base@11.0.14/java.lang.Thread.run(Thread.java:829)
+2022.06.15 00:06:46 INFO  web[][o.s.s.app.WebServer] Web Server stopped
+2022.06.15 08:26:11 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2022.06.15 08:26:13 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 9.5.0.56709 / 3185a5669fdfaf7e4fa6dc7876e0b0dfd5d2aae7
+2022.06.15 08:26:13 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:postgresql://db:5432/sonar
+2022.06.15 08:26:14 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2022.06.15 08:26:14 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy C# Code Quality and Security / 8.40.0.48530 / 1032f59c84b83ac511bb0ddce6be4e53590df0f3
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Configuration detection fot Code Quality and Security / 1.2.0.267 / 4f37ba9ffb37a96d5883e52ad392ed32c5c6eaab
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Flex Code Quality and Security / 2.7.0.2865 / 9e61d9774455b25eefd0b71bf8903cb030641864
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Go Code Quality and Security / 1.9.0.3429 / faf3c08c0ebf3a877186442cd4a0ddd50de079a8
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy HTML Code Quality and Security / 3.6.0.3106 / 963bdc9f051f5dcb698b418790364231aeea04f2
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy IaC Code Quality and Security / 1.7.0.2012 / a006dbf717537ce3a87bb2b6b088597ead3273d1
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JaCoCo / 1.1.1.1157 / 83478572b9f23efac29de15e30c7758bbb0c0e47
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Java Code Quality and Security / 7.12.0.29739 / 0d02c81aa01624ff348b01257ecf7288bbbe0a16
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JavaScript/TypeScript/CSS Code Quality and Security / 9.3.0.18033 / 8fd364274dc85afd7e70fe8d86b7427b3f8fe3a9
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Kotlin Code Quality and Security / 2.9.0.1147 / 6ce439214a685d4aabde6461fd609a9a9c1df1c6
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy PHP Code Quality and Security / 3.23.1.8766 / db197ac9daccf3d305ad5e40618a65a95f3d5dde
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Python Code Quality and Security / 3.13.0.9611 / 59566828fb593103a5b39147d918b1314561b0e4
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Ruby Code Quality and Security / 1.9.0.3429 / faf3c08c0ebf3a877186442cd4a0ddd50de079a8
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Scala Code Quality and Security / 1.9.0.3429 / faf3c08c0ebf3a877186442cd4a0ddd50de079a8
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Text file Code Quality and Security / 1.1.0.282 / a90347d77706f598413780a08442deec4ae68f4e
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy VB.NET Code Quality and Security / 8.40.0.48530 / 1032f59c84b83ac511bb0ddce6be4e53590df0f3
+2022.06.15 08:26:15 INFO  web[][o.s.s.p.ServerPluginManager] Deploy XML Code Quality and Security / 2.5.0.3376 / 3b089c16cf0736c56f4fdb2fc88ddad59e7ca45d
+2022.06.15 08:26:16 INFO  web[][o.s.s.p.d.m.c.PostgresCharsetHandler] Verify that database charset supports UTF8
+2022.06.15 08:26:16 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [http://localhost:9001]
+2022.06.15 08:26:16 WARN  web[][o.s.a.s.w.WebService$Action] Description is not set on action api/monitoring/metrics
+2022.06.15 08:26:16 WARN  web[][o.s.a.s.w.WebService$Action] Since is not set on action api/monitoring/metrics
+2022.06.15 08:26:16 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/monitoring/metrics
+2022.06.15 08:26:16 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2022.06.15 08:26:16 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceFilter@336f49a1 [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/components/update_key, ...]}]
+2022.06.15 08:26:17 INFO  web[][o.s.s.p.DetectPluginChange] Detect plugin changes
+2022.06.15 08:26:17 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2022.06.15 08:26:17 INFO  web[][o.s.s.p.DetectPluginChange] No plugin change detected
+2022.06.15 08:26:19 INFO  web[][o.s.s.s.LogServerId] Server ID: 243B8A4D-AYFjxsxv7daBigSNK_Y6
+2022.06.15 08:26:19 WARN  web[][o.s.s.a.LogOAuthWarning] For security reasons, OAuth authentication should use HTTPS. You should set the property 'Administration > Configuration > Server base URL' to a HTTPS URL.
+2022.06.15 08:26:19 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/plugins/download
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/analysis_cache/get
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/list_bitbucketserver_projects
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/search_bitbucketcloud_repos
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/check_pat
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/list_azure_projects
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/search_bitbucketserver_repos
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/search_azure_repos
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/project_dump/status
+2022.06.15 08:26:21 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/push/sonarlint_events
+2022.06.15 08:26:21 INFO  web[][o.s.s.a.p.ExpiredSessionsCleaner] Purge of expired session tokens has removed 0 elements
+2022.06.15 08:26:21 INFO  web[][o.s.s.a.p.ExpiredSessionsCleaner] Purge of expired SAML message ids has removed 0 elements
+2022.06.15 08:26:21 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2022.06.15 08:26:21 INFO  web[][o.s.s.t.TelemetryDaemon] Sharing of SonarQube statistics is enabled.
+2022.06.15 08:26:21 INFO  web[][o.s.s.s.GeneratePluginIndex] Generate scanner plugin index
+2022.06.15 08:26:21 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2022.06.15 08:26:21 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2022.06.15 08:26:21 INFO  web[][o.s.s.s.RegisterPlugins] Register plugins
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.SonarLintConnectionFilter@34f900bf [pattern=UrlPattern{inclusions=[/api/*], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceFilter@18b2b179 [pattern=UrlPattern{inclusions=[/api/issues/delete_comment.*, ...], exclusions=[/api/authentication/login.*, ...]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceReroutingFilter@526469e5 [pattern=UrlPattern{inclusions=[/api/components/bulk_update_key, ...], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.DefaultAdminCredentialsVerifierFilter@4c9e34d9 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@301e290d [pattern=UrlPattern{inclusions=[/sessions/init/*], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@3d2a7f0e [pattern=UrlPattern{inclusions=[/oauth2/callback/*], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ResetPasswordFilter@4cf0020f [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@352d3d36 [pattern=UrlPattern{inclusions=[/api/authentication/login], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@40b33f17 [pattern=UrlPattern{inclusions=[/api/authentication/logout], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@3e500014 [pattern=UrlPattern{inclusions=[/api/authentication/validate], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.user.ws.ChangePasswordAction@71f5cfb4 [pattern=UrlPattern{inclusions=[/api/users/change_password], exclusions=[]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.plugins.PluginsRiskConsentFilter@30e2d6c6 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2022.06.15 08:26:21 INFO  web[][o.s.s.q.ProjectsInWarningDaemon] Counting number of projects in warning is not started as there are no projects in this situation.
+2022.06.15 08:26:21 INFO  web[][o.s.s.p.p.PlatformLevelStartup] Running Community Edition
+2022.06.15 08:26:22 INFO  web[][o.s.s.p.Platform] Web Server is operational
+2022.06.15 09:37:12 INFO  web[][o.s.a.c.g.GitlabHttpClient] Gitlab API call to [https://gitlab.com/api/v4/projects] failed with error message : [gitlab.com: Try again]
+java.net.UnknownHostException: gitlab.com: Try again
+	at java.base/java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1519)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1509)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1368)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at okhttp3.Dns$Companion$DnsSystem.lookup(Dns.kt:49)
+	at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:164)
+	at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:129)
+	at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:205)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at org.sonar.alm.client.gitlab.GitlabHttpClient.checkProjectAccess(GitlabHttpClient.java:86)
+	at org.sonar.alm.client.gitlab.GitlabHttpClient.checkUrl(GitlabHttpClient.java:69)
+	at org.sonar.alm.client.gitlab.GitlabGlobalSettingsValidator.validate(GitlabGlobalSettingsValidator.java:46)
+	at org.sonar.server.monitoring.devops.GitlabMetricsTask.validateGitlab(GitlabMetricsTask.java:58)
+	at org.sonar.server.monitoring.devops.GitlabMetricsTask.run(GitlabMetricsTask.java:51)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.06.15 09:38:21 INFO  web[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2022.06.15 09:38:21 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2022.06.15 09:38:21 INFO  web[][o.s.s.app.WebServer] Web Server stopped
